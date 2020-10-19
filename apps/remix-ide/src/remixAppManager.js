@@ -1,5 +1,6 @@
 /* global localStorage, fetch */
-import { PluginManager, IframePlugin } from '@remixproject/engine'
+import { PluginManager } from '@remixproject/engine'
+import { IframePlugin } from '@remixproject/engine-web'
 import { EventEmitter } from 'events'
 import QueryParams from './lib/query-params'
 import { PermissionHandler } from './app/ui/persmission-handler'
@@ -70,7 +71,7 @@ export class RemixAppManager extends PluginManager {
   }
 
   onRegistration (plugin) {
-    this.event.emit('added', plugin.name)
+    // this.event.emit('added', plugin.name)
   }
 
   async ensureActivated (apiName) {
